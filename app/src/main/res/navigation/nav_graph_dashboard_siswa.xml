@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/siswa_graph"
+    app:startDestination="@id/homeSiswaFragment">
+
+    <fragment
+        android:id="@+id/profilSiswaFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_profil.ProfilSiswaFragment"
+        android:label="fragment_profil_siswa"
+        tools:layout="@layout/fragment_profil_siswa">
+        <action
+            android:id="@+id/action_profilSiswaFragment_to_editProfilSiswaFragment"
+            app:destination="@id/editProfilSiswaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_profilSiswaFragment_to_listKaryaTulisKuFragment"
+            app:destination="@id/listKaryaTulisKuFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_profilSiswaFragment_to_listKaryaCitraKuFragment"
+            app:destination="@id/listKaryaCitraKuFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_profilSiswaFragment_to_listKaryaKuDitolakFragment"
+            app:destination="@id/listKaryaKuDitolakFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/listKaryaKuFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.ListKaryaKuFragment"
+        android:label="fragment_list_karya_ku"
+        tools:layout="@layout/fragment_list_karya_ku">
+        <action
+            android:id="@+id/action_listKaryaKuFragment_to_listKaryaCitraKuFragment"
+            app:destination="@id/listKaryaCitraKuFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_listKaryaKuFragment_to_listKaryaTulisKuFragment"
+            app:destination="@id/listKaryaTulisKuFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfilSiswaFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_profil.UbahProfilSiswaFragment"
+        android:label="fragment_edit_profil_siswa"
+        tools:layout="@layout/fragment_ubah_profil_siswa">
+        <argument
+            android:name="siswa"
+            app:argType="tedc.alian.data.remote.api.siswa.SiswaDto" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailKaryaTulisFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.karya.karya_tulis.DetailKaryaTulisFragment"
+        android:label="fragment_detail_karya_tulis"
+        tools:layout="@layout/fragment_detail_karya_tulis">
+        <argument
+            android:name="id_karya_tulis"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailKaryaCitraFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.karya.karya_citra.DetailKaryaCitraFragment"
+        android:label="fragment_detail_karya_citra"
+        tools:layout="@layout/fragment_detail_karya_citra">
+        <argument
+            android:name="id_karya_citra"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/tambahKaryaTulisFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.karya_tulis.TambahKaryaTulisFragment"
+        android:label="fragment_tambah_karya_tulis"
+        tools:layout="@layout/fragment_tambah_karya_tulis">
+        <action
+            android:id="@+id/action_tambahKaryaTulisFragment_to_detailKaryaTulisFragment"
+            app:destination="@id/detailKaryaTulisFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom" />
+    </fragment>
+    <fragment
+        android:id="@+id/listKaryaCitraFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.karya.karya_citra.ListKaryaCitraFragment"
+        android:label="fragment_list_karya_citra"
+        tools:layout="@layout/fragment_list_karya_citra">
+        <action
+            android:id="@+id/action_listKaryaCitraFragment_to_detailKaryaCitraFragment"
+            app:destination="@id/detailKaryaCitraFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeSiswaFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.HalamanUtamaSiswaFragment"
+        android:label="fragment_home_siswa"
+        tools:layout="@layout/fragment_halaman_utama_siswa">
+        <action
+            android:id="@+id/action_homeSiswaFragment_to_tambahKategoriKaryaFragment"
+            app:destination="@id/tambahKategoriKaryaFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom" />
+        <action
+            android:id="@+id/action_homeSiswaFragment_to_listKaryaCitraFragment"
+            app:destination="@id/listKaryaCitraFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeSiswaFragment_to_listKaryaTulisFragment"
+            app:destination="@id/listKaryaTulisFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeSiswaFragment_to_listNotifikasiSiswaFragment"
+            app:destination="@id/listNotifikasiSiswaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeSiswaFragment_to_detailKaryaCitraFragment"
+            app:destination="@id/detailKaryaCitraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tambahKaryaCitraFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.karya_citra.TambahKaryaCitraFragment"
+        android:label="fragment_tambah_karya_citra"
+        tools:layout="@layout/fragment_tambah_karya_citra">
+        <action
+            android:id="@+id/action_tambahKaryaCitraFragment_to_pilihanMediaKaryaBottomSheet"
+            app:destination="@id/pilihanMediaKaryaBottomSheet" />
+        <action
+            android:id="@+id/action_tambahKaryaCitraFragment_to_detailKaryaCitraFragment"
+            app:destination="@id/detailKaryaCitraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listKaryaTulisFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.karya.karya_tulis.ListKaryaTulisFragment"
+        android:label="fragment_list_karya_tulis"
+        tools:layout="@layout/fragment_list_karya_tulis">
+        <action
+            android:id="@+id/action_listKaryaTulisFragment_to_detailKaryaTulisFragment"
+            app:destination="@id/detailKaryaTulisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tambahKategoriKaryaFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.TambahKategoriKaryaFragment"
+        android:label="TambahKategoriKaryaFragment"
+        tools:layout="@layout/fragment_tambah_kategori_karya">
+        <action
+            android:id="@+id/action_tambahKategoriKaryaFragment_to_tambahKaryaTulisFragment"
+            app:destination="@id/tambahKaryaTulisFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_tambahKategoriKaryaFragment_to_tambahKaryaCitraFragment"
+            app:destination="@id/tambahKaryaCitraFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/listKaryaSiswaFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.karya.ListKaryaSiswaFragment"
+        android:label="fragment_list_karya_siswa"
+        tools:layout="@layout/fragment_list_karya_siswa">
+        <action
+            android:id="@+id/action_listKaryaSiswaFragment_to_listKaryaCitraFragment"
+            app:destination="@id/listKaryaCitraFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_listKaryaSiswaFragment_to_detailKaryaCitraFragment"
+            app:destination="@id/detailKaryaCitraFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom" />
+        <action
+            android:id="@+id/action_listKaryaSiswaFragment_to_detailKaryaTulisFragmentSiswa"
+            app:destination="@id/detailKaryaTulisFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom" />
+    </fragment>
+    <fragment
+        android:id="@+id/listKaryaCitraKuFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.karya_citra.ListKaryaCitraKuFragment"
+        android:label="ListKaryaCitraKuFragment"
+        tools:layout="@layout/fragment_list_karya_citraku">
+        <action
+            android:id="@+id/action_listKaryaCitraKuFragment_to_detailKaryaCitraFragment"
+            app:destination="@id/detailKaryaCitraFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom" />
+        <action
+            android:id="@+id/action_listKaryaCitraKuFragment_to_aksiKaryaCitraBottomSheet"
+            app:destination="@id/aksiKaryaCitraBottomSheet" />
+    </fragment>
+    <fragment
+        android:id="@+id/listKaryaTulisKuFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.karya_tulis.ListKaryaTulisKuFragment"
+        android:label="ListKaryaTulisKuFragment"
+        tools:layout="@layout/fragment_list_karya_tulisku">
+        <action
+            android:id="@+id/action_listKaryaTulisKuFragment_to_detailKaryaTulisFragment"
+            app:destination="@id/detailKaryaTulisFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom" />
+        <action
+            android:id="@+id/action_listKaryaTulisKuFragment_to_aksiKaryaTulisBottomSheet"
+            app:destination="@id/aksiKaryaTulisBottomSheet" />
+    </fragment>
+    <dialog
+        android:id="@+id/aksiKaryaTulisBottomSheet"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.karya_tulis.AksiKaryaTulisBottomSheet"
+        android:label="bottom_sheet_aksi_karya_tulis">
+        <argument
+            android:name="karya_tulis"
+            app:argType="tedc.alian.data.remote.api.karya.KaryaTulisDto" />
+        <action
+            android:id="@+id/action_aksiKaryaTulisBottomSheet_to_editKaryaTulisFragment"
+            app:destination="@id/editKaryaTulisFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/aksiKaryaCitraBottomSheet"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.karya_citra.AksiKaryaCitraBottomSheet"
+        android:label="bottom_sheet_aksi_karya_citra"
+        tools:layout="@layout/bottom_sheet_aksi_karya">
+        <argument
+            android:name="karya_citra"
+            app:argType="tedc.alian.data.remote.api.karya.KaryaCitraDto" />
+        <action
+            android:id="@+id/action_aksiKaryaCitraBottomSheet_to_editKaryaCitraFragment"
+            app:destination="@id/editKaryaCitraFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/editKaryaTulisFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.karya_tulis.UbahKaryaTulisFragment"
+        android:label="fragment_edit_karya_tulis"
+        tools:layout="@layout/fragment_ubah_karya_tulis">
+        <argument
+            android:name="karya_tulis"
+            app:argType="tedc.alian.data.remote.api.karya.KaryaTulisDto"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/editKaryaCitraFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.karya_citra.UbahKaryaCitraFragment"
+        android:label="fragment_edit_karya_citra"
+        tools:layout="@layout/fragment_ubah_karya_citra">
+        <argument
+            android:name="karya_citra"
+            app:argType="tedc.alian.data.remote.api.karya.KaryaCitraDto" />
+        <action
+            android:id="@+id/action_ubahKaryaCitraFragment_to_pilihanMediaFragment"
+            app:destination="@+id/pilihanMediaKaryaBottomSheet" />
+    </fragment>
+    <dialog
+        android:id="@+id/pilihanMediaKaryaBottomSheet"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.karya_citra.PilihanMediaKaryaBottomSheet"
+        android:label="bottom_sheet_pilihan_media"
+        tools:layout="@layout/bottom_sheet_pilihan_media">
+        <argument
+            android:name="is_edit"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </dialog>
+    <fragment
+        android:id="@+id/listKaryaKuDitolakFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.karya_citra.ListKaryaKuDitolakFragment"
+        android:label="fragment_list_karya_ku_ditolak"
+        tools:layout="@layout/fragment_list_karya_ku_ditolak">
+        <action
+            android:id="@+id/action_listKaryaKuDitolakFragment_to_detailKaryaDitolakFragment"
+            app:destination="@id/detailKaryaDitolakFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailKaryaDitolakFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.siswa.kelola_karya.karya_citra.DetailKaryaDitolakFragment"
+        android:label="fragment_detail_karya_ditolak"
+        tools:layout="@layout/fragment_detail_karya_ditolak">
+        <argument
+            android:name="karya_citra"
+            app:argType="tedc.alian.data.remote.api.karya.KaryaCitraDitolakDto" />
+    </fragment>
+    <fragment
+        android:id="@+id/listNotifikasiSiswaFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.notifikasi.ListNotifikasiSiswaFragment"
+        android:label="fragment_list_notifikasi_siswa"
+        tools:layout="@layout/fragment_list_notifikasi_siswa" >
+        <action
+            android:id="@+id/action_listNotifikasiSiswaFragment_to_detailKaryaCitraFragment"
+            app:destination="@id/detailKaryaCitraFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,49 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.KaryaSiswa" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_900</item>
+        <item name="colorPrimaryVariant">@color/primary_900</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/secondary_50</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary_900</item>
+        <item name="colorSecondaryVariant">@color/secondary_400</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:drawableTint">@color/design_default_color_on_primary</item>
+    </style>
+
+    <style name="IconButton" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconSize">30dp</item>
+    </style>
+
+    <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="android:background">@drawable/text_input_custom_border</item>
+        <item name="shapeAppearanceOverlay">@style/MyShapeAppearanceOverlay</item>
+    </style>
+
+    <style name="MyShapeAppearanceOverlay">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="AppTheme.Toolbar" parent="Theme.KaryaSiswa">
+        <!--This line changes the color of text in Toolbar-->
+        <item name="android:textColorPrimary">@color/white</item>
+        <!--This line changes the color of icons in toolbar (back, overflow menu icons)-->
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+</resources>

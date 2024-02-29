@@ -1,0 +1,43 @@
+<resources>
+
+    <style name="Theme.KaryaSiswa" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_50</item>
+        <item name="colorPrimaryVariant">@color/primary_900</item>
+        <item name="colorOnPrimary">@color/primary_900</item>
+        <item name="android:windowBackground">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary_900</item>
+        <item name="colorSecondaryVariant">@color/secondary_400</item>
+        <item name="colorOnSecondary">#191919</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorOnSecondary</item>
+        <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="hintTextColor">#E1171717</item>
+    </style>
+
+    <style name="IconButton" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconSize">30dp</item>
+    </style>
+
+    <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="android:background">@drawable/text_input_custom_border</item>
+        <item name="shapeAppearanceOverlay">@style/MyShapeAppearanceOverlay</item>
+        <item name="android:textColorHint">#E1171717</item>
+        <item name="startIconTint">#E1171717</item>
+    </style>
+
+    <style name="MyShapeAppearanceOverlay">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+</resources>

@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/save"
+        android:contentDescription="@string/app_name"
+        android:icon="@drawable/ic_done"
+        android:iconTint="@color/design_default_color_on_primary"
+        android:title="@string/txt_done"
+        app:showAsAction="ifRoom" />
+
+</menu>

@@ -1,0 +1,8 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="theme_values">
+        <item>Mode Terang</item>
+        <item>Mode Gelap</item>
+        <item>Bawaan Sistem</item>
+    </string-array>
+</resources>

@@ -1,0 +1,14 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Tampilan Aplikasi">
+
+        <ListPreference
+            app:defaultValue="Bawaan Sistem"
+            app:entries="@array/theme_values"
+            app:entryValues="@array/theme_values"
+            app:key="theme"
+            app:summary="Tekan disini untuk memilih tema"
+            app:title="Pilih Tema" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

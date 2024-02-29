@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:checkable="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingBottom="12dp">
+
+    <ImageView
+        android:id="@+id/karya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="karya"
+        android:maxHeight="300dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nama_siswa"
+        tools:adjustViewBounds="true"
+        tools:src="@drawable/img_add_kategori_karya" />
+
+    <TextView
+        android:id="@+id/title_karya"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/karya"
+        tools:text="Poster pemandangan alam" />
+
+    <TextView
+        android:id="@+id/excerpt"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/title_karya"
+        app:layout_constraintStart_toStartOf="@+id/title_karya"
+        app:layout_constraintTop_toBottomOf="@id/title_karya"
+        tools:maxLines="3"
+        tools:text="@tools:sample/lorem/random" />
+
+    <ImageView
+        android:id="@+id/foto_profil"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_avatar" />
+
+    <TextView
+        android:id="@+id/nama_siswa"
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="5dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/foto_profil"
+        app:layout_constraintStart_toEndOf="@id/foto_profil"
+        app:layout_constraintTop_toTopOf="@id/foto_profil"
+        tools:text="Muhammad Rizky Ramadhan" />
+
+    <ImageView
+        android:id="@+id/verified"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/ic_verified"
+        app:layout_constraintBottom_toBottomOf="@id/foto_profil"
+        app:layout_constraintStart_toEndOf="@id/nama_siswa"
+        app:layout_constraintTop_toTopOf="@id/foto_profil" />
+
+    <TextView
+        android:id="@+id/uploaded"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/excerpt"
+        app:layout_constraintTop_toBottomOf="@id/excerpt"
+        tools:text="20 May 2023" />
+
+    <ImageView
+        android:id="@+id/like"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_love"
+        app:layout_constraintStart_toStartOf="@id/excerpt"
+        app:layout_constraintTop_toBottomOf="@id/uploaded" />
+
+    <TextView
+        android:id="@+id/jumlah_like"
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/like"
+        app:layout_constraintTop_toTopOf="@id/like"
+        tools:text="10" />
+
+    <ImageView
+        android:id="@+id/komentar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_komentar"
+        app:layout_constraintStart_toEndOf="@id/jumlah_like"
+        app:layout_constraintTop_toTopOf="@id/jumlah_like" />
+
+    <TextView
+        android:id="@+id/jumlah_komentar"
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/komentar"
+        app:layout_constraintStart_toEndOf="@id/komentar"
+        app:layout_constraintTop_toTopOf="@id/komentar"
+        tools:text="10 Komentar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

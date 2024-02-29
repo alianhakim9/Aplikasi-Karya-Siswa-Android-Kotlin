@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav_graph"
+    app:startDestination="@id/authDashboardFragment">
+
+    <fragment
+        android:id="@+id/authDashboardFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.auth.AuthDashboardFragment"
+        android:label="fragment_auth_dashboard"
+        tools:layout="@layout/fragment_auth_dashboard">
+        <action
+            android:id="@+id/action_authDashboardFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_searchAccountFragment"
+            app:destination="@id/searchAccountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchAccountFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.auth.CariAkunFragment"
+        android:label="fragment_search_account"
+        tools:layout="@layout/fragment_cari_akun">
+        <action
+            android:id="@+id/action_searchAccountFragment_to_authTokenFragment"
+            app:destination="@id/authTokenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.auth.ResetPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_reset_password">
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument android:name="token"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/authTokenFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.auth.AuthTokenFragment"
+        android:label="fragment_auth_token"
+        tools:layout="@layout/fragment_auth_token" >
+        <action
+            android:id="@+id/action_authTokenFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
+</navigation>

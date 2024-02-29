@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_dashboard_tim"
+    app:startDestination="@id/halamanUtamaTimFragment">
+
+    <fragment
+        android:id="@+id/halamanUtamaTimFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.tim.HalamanUtamaTimFragment"
+        android:label="fragment_halaman_utama_tim"
+        tools:layout="@layout/fragment_halaman_utama_tim" >
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            android:id="@+id/action_halamanUtamaTimFragment_to_tambahPromosiFragment"
+            app:destination="@id/tambahPromosiFragment" />
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            android:id="@+id/action_halamanUtamaTimFragment_to_listPromosiFragment"
+            app:destination="@id/listPromosiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilTimFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.tim.ProfilTimFragment"
+        android:label="fragment_profil_tim"
+        tools:layout="@layout/fragment_profil_tim" >
+        <action
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            android:id="@+id/action_profilTimFragment_to_ubahProfilTimFragment"
+            app:destination="@id/ubahProfilTimFragment" />
+        <action
+            android:id="@+id/action_profilTimFragment_to_ubahPromosiFragment"
+            app:destination="@id/ubahPromosiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tambahPromosiFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.tim.TambahPromosiFragment"
+        android:label="fragment_tambah_promosi"
+        tools:layout="@layout/fragment_tambah_promosi" />
+    <fragment
+        android:id="@+id/ubahProfilTimFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.tim.UbahProfilTimFragment"
+        android:label="fragment_ubah_profil_tim"
+        tools:layout="@layout/fragment_ubah_profil_tim" >
+        <argument
+            android:name="tim"
+            app:argType="tedc.alian.data.remote.dto.TimDto" />
+    </fragment>
+    <fragment
+        android:id="@+id/listPromosiFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.tim.ListPromosiFragment"
+        android:label="fragment_list_promosi"
+        tools:layout="@layout/fragment_list_promosi" />
+    <fragment
+        android:id="@+id/ubahPromosiFragment"
+        android:name="tedc.alian.karyasiswa.presentation.fragment.tim.UbahPromosiFragment"
+        android:label="fragment_ubah_promosi"
+        tools:layout="@layout/fragment_ubah_promosi" >
+        <argument
+            android:name="promosi"
+            app:argType="tedc.alian.data.remote.dto.PromosiDto" />
+    </fragment>
+</navigation>

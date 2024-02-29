@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-files-path
+        name="karya_visual"
+        path="Android/data/tedc.alian.karyasiswa/files/karya_visual" />
+    <external-path
+        name="external_storage_root"
+        path="." />
+</paths>

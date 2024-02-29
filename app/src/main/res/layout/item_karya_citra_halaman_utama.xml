@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:layout_margin="8dp">
+
+    <ImageView
+        android:id="@+id/karya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        tools:adjustViewBounds="true"
+        tools:src="@drawable/img_add_kategori_karya" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignStart="@id/karya"
+        android:layout_alignTop="@id/karya"
+        android:layout_alignEnd="@id/karya"
+        android:layout_alignBottom="@id/karya"
+        android:background="@drawable/bg_gradient" />
+
+    <TextView
+        android:id="@+id/excerpt"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/karya"
+        android:layout_alignEnd="@id/karya"
+        android:layout_alignBottom="@id/karya"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:maxLines="2"
+        android:textColor="@color/primary_50"
+        tools:text="@tools:sample/lorem/random" />
+
+    <TextView
+        android:id="@+id/tv_nama_siswa"
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/excerpt"
+        android:layout_alignStart="@id/karya"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/design_default_color_on_primary"
+        android:textStyle="bold"
+        tools:text="Alian Hakim" />
+
+
+</RelativeLayout>

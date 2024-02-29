@@ -1,0 +1,130 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
+    id "kotlin-parcelize"
+}
+
+android {
+    namespace 'tedc.alian.karyasiswa'
+    compileSdk 33
+    defaultConfig {
+        applicationId "tedc.alian.karyasiswa"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            debuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        tasks.lint.enabled = false
+    }
+    sourceSets.main {
+        assets.srcDirs = ['assets']
+        jni.srcDirs = [] //disable automatic ndk-build
+        jniLibs.srcDirs = ['libs']
+    }
+    sourceSets {
+        main {
+            assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+            res.srcDirs = ['src/main/res', 'src/main/res/drawable']
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.test:core-ktx:1.4.0'
+    implementation "androidx.activity:activity:1.6.1"
+    implementation "androidx.fragment:fragment:1.5.5"
+    implementation project(":data")
+    implementation project(":utils")
+    // Integration with observables
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.0"
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    // Navigation component
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
+    implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+    // Dagger hilt
+    implementation 'com.google.dagger:hilt-android:2.45'
+    implementation 'androidx.preference:preference:1.2.0'
+    kapt 'com.google.dagger:hilt-compiler:2.45'
+    // Splash screen
+    implementation 'androidx.core:core-splashscreen:1.0.0-rc01'
+    // Coil
+    implementation "io.coil-kt:coil:2.2.2"
+    implementation "io.coil-kt:coil-video:2.2.2"
+    implementation "io.coil-kt:coil-svg:2.2.2"
+    // View Pager 2
+    implementation 'androidx.viewpager2:viewpager2:1.1.0-alpha01'
+    // Exo Player
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.18.5'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.5'
+    // Android Room
+    implementation "androidx.room:room-runtime:2.4.0"
+    kapt "androidx.room:room-compiler:2.4.0"
+    implementation "androidx.room:room-ktx:2.4.0"
+    // Paging 3
+    implementation "androidx.paging:paging-runtime-ktx:3.0.0"
+    // Shimmer loading
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    // SharedPreferences
+    implementation "androidx.preference:preference-ktx:1.1.1"
+    // rich text editor
+    implementation 'jp.wasabeef:richeditor-android:2.0.0'
+    // lottie animation
+    implementation 'com.airbnb.android:lottie:6.0.0'
+    // image cropper
+    implementation "com.theartofdev.edmodo:android-image-cropper:2.8.0"
+    // Video compressor
+    implementation 'com.github.AbedElazizShe:LightCompressor:1.2.3'
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation 'org.mockito:mockito-inline:3.12.4'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
+
+kapt {
+    correctErrorTypes true
+}
